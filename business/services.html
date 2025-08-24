@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - TalentPro</title>
+    <meta name="description" content="Our comprehensive talent acquisition and advisory services">
+    
+    <!-- Tailwind CSS via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px'
+                    }
+                },
+                extend: {
+                    colors: {
+                        border: 'hsl(214, 32%, 91%)',
+                        input: 'hsl(214, 32%, 91%)',
+                        ring: 'hsl(210, 29%, 24%)',
+                        background: 'hsl(210, 17%, 98%)',
+                        foreground: 'hsl(210, 29%, 24%)',
+                        primary: {
+                            DEFAULT: 'hsl(210, 29%, 24%)',
+                            foreground: 'hsl(0, 0%, 100%)',
+                            hover: 'hsl(210, 29%, 20%)'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(210, 17%, 95%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(0, 84.2%, 60.2%)',
+                            foreground: 'hsl(0, 0%, 100%)'
+                        },
+                        success: {
+                            DEFAULT: 'hsl(142, 71%, 45%)',
+                            foreground: 'hsl(0, 0%, 100%)'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(210, 17%, 95%)',
+                            foreground: 'hsl(215, 14%, 34%)'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(45, 100%, 60%)',
+                            foreground: 'hsl(210, 29%, 24%)',
+                            hover: 'hsl(45, 100%, 55%)'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(0, 0%, 100%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(0, 0%, 100%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        slate: {
+                            DEFAULT: 'hsl(215, 25%, 27%)',
+                            light: 'hsl(215, 16%, 47%)',
+                            lighter: 'hsl(215, 20%, 65%)'
+                        },
+                        hero: {
+                            from: 'hsl(210, 29%, 24%)',
+                            to: 'hsl(195, 85%, 41%)',
+                            accent: 'hsl(45, 100%, 60%)'
+                        }
+                    },
+                    borderRadius: {
+                        lg: '0.75rem',
+                        md: 'calc(0.75rem - 2px)',
+                        sm: 'calc(0.75rem - 4px)'
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'fadeInUp': {
+                            from: { opacity: '0', transform: 'translateY(30px)' },
+                            to: { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/overrides.css">
+    
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-foreground font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                        <div class="w-6 h-6 bg-accent-foreground rounded-sm"></div>
+                    </div>
+                    <span class="text-xl font-bold text-foreground">TalentPro</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="nav-link font-medium text-accent transition-all duration-300 relative group active">
+                        Services
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-full"></span>
+                    </a>
+                    <a href="about.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-foreground">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 p-4 bg-background rounded-lg shadow-lg">
+                <a href="index.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">Home</a>
+                <a href="services.html" class="block py-3 px-4 rounded-lg font-medium text-accent bg-accent/10">Services</a>
+                <a href="about.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">About</a>
+                <a href="contact.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">Contact</a>
+                <div class="mt-4">
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300 w-full text-center block">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content with padding for fixed nav -->
+    <div class="pt-16">
+        
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 hero-gradient text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Grid -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Executive Search -->
+                    <div id="executive" class="bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-foreground mb-2">Executive Search</h3>
+                        <p class="text-accent font-medium mb-4">Lorem Ipsum Leadership</p>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Comprehensive candidate assessment</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Industry expertise and insights</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Confidential search process</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Long-term partnership approach</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="setActiveService(0)" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center group">
+                            Learn More
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Professional Recruiting -->
+                    <div id="professional" class="bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-foreground mb-2">Professional Recruiting</h3>
+                        <p class="text-accent font-medium mb-4">Lorem Ipsum Talent</p>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Targeted candidate sourcing</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Skills-based matching</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Cultural fit assessment</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Streamlined hiring process</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="setActiveService(1)" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center group">
+                            Learn More
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Interim Solutions -->
+                    <div id="interim" class="bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="award" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-foreground mb-2">Interim Solutions</h3>
+                        <p class="text-accent font-medium mb-4">Lorem Ipsum Bridge</p>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Immediate availability</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Proven track record</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Flexible engagement terms</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Seamless integration</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="setActiveService(2)" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center group">
+                            Learn More
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Talent Advisory -->
+                    <div id="advisory" class="bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-foreground mb-2">Talent Advisory</h3>
+                        <p class="text-accent font-medium mb-4">Lorem Ipsum Strategy</p>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Strategic workforce planning</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Market intelligence reports</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Compensation benchmarking</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Talent retention strategies</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="setActiveService(3)" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center group">
+                            Learn More
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Details Section -->
+        <section class="py-16 md:py-24 bg-muted/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-card p-8 md:p-12 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
+                                <i id="service-detail-icon" data-lucide="users" class="w-8 h-8 text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 id="service-detail-title" class="text-3xl font-bold text-card-foreground">Executive Search</h3>
+                                <p id="service-detail-subtitle" class="text-accent font-medium">Lorem Ipsum Leadership</p>
+                            </div>
+                        </div>
+                        
+                        <p id="service-detail-description" class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="setActiveService(0)" class="service-tab-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-accent text-accent-foreground">
+                                Executive Search
+                            </button>
+                            <button onclick="setActiveService(1)" class="service-tab-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-muted text-muted-foreground hover:bg-accent/10 hover:text-accent">
+                                Professional Recruiting
+                            </button>
+                            <button onclick="setActiveService(2)" class="service-tab-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-muted text-muted-foreground hover:bg-accent/10 hover:text-accent">
+                                Interim Solutions
+                            </button>
+                            <button onclick="setActiveService(3)" class="service-tab-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-muted text-muted-foreground hover:bg-accent/10 hover:text-accent">
+                                Talent Advisory
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Pricing Packages</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Starter Package -->
+                    <div class="relative bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-card-foreground mb-2">Starter Package</h3>
+                            <p class="text-muted-foreground mb-4">Perfect for small businesses</p>
+                            <div class="text-4xl font-bold text-accent">$2,500</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Up to 3 candidate presentations</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Basic market research</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">30-day guarantee</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Email support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="w-full text-center block py-4 rounded-lg font-semibold transition-all duration-300 bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <!-- Professional Package -->
+                    <div class="relative bg-card p-8 rounded-xl shadow-lg card-hover ring-2 ring-accent">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4"></i>
+                                <span>Most Popular</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-card-foreground mb-2">Professional Package</h3>
+                            <p class="text-muted-foreground mb-4">Most popular choice</p>
+                            <div class="text-4xl font-bold text-accent">$5,000</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Up to 7 candidate presentations</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Comprehensive market analysis</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">90-day guarantee</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Interview coaching</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="w-full text-center block py-4 rounded-lg font-semibold transition-all duration-300 bg-accent text-accent-foreground hover:bg-accent-hover">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <!-- Executive Package -->
+                    <div class="relative bg-card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-card-foreground mb-2">Executive Package</h3>
+                            <p class="text-muted-foreground mb-4">For senior-level positions</p>
+                            <div class="text-4xl font-bold text-accent">$10,000</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Unlimited candidate presentations</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">In-depth market intelligence</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">180-day guarantee</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Executive search consultant</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Reference verification</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                                <span class="text-card-foreground">Onboarding support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="w-full text-center block py-4 rounded-lg font-semibold transition-all duration-300 bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-primary text-primary-foreground">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl text-primary-foreground/80 mb-10 max-w-3xl mx-auto">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover inline-flex items-center justify-center">
+                        Contact Us Today
+                    </a>
+                    <a href="about.html" class="bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-primary inline-flex items-center justify-center">
+                        Learn About Our Team
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-primary text-primary-foreground">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="py-16 md:py-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Company Info -->
+                    <div class="lg:col-span-1">
+                        <div class="flex items-center space-x-2 mb-6">
+                            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                                <div class="w-6 h-6 bg-accent-foreground rounded-sm"></div>
+                            </div>
+                            <span class="text-xl font-bold">TalentPro</span>
+                        </div>
+                        <p class="text-primary-foreground/80 mb-6 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-4 h-4 text-accent"></i>
+                                <span class="text-sm">contact@talentpro.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+                                <span class="text-sm">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i>
+                                <span class="text-sm">123 Business Ave, Suite 100</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Links -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-6">Services</h3>
+                        <ul class="space-y-3">
+                            <li><a href="services.html#executive" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Executive Search</a></li>
+                            <li><a href="services.html#professional" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Professional Recruiting</a></li>
+                            <li><a href="services.html#interim" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Interim Solutions</a></li>
+                            <li><a href="services.html#advisory" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Talent Advisory</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Links -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-6">Company</h3>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">About Us</a></li>
+                            <li><a href="about.html#team" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Our Team</a></li>
+                            <li><a href="about.html#careers" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Careers</a></li>
+                            <li><a href="about.html#news" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">News & Insights</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Resources Links -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-6">Resources</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Industry Reports</a></li>
+                            <li><a href="#" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Salary Guides</a></li>
+                            <li><a href="#" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">Career Resources</a></li>
+                            <li><a href="#" class="text-primary-foreground/80 hover:text-accent transition-colors duration-300">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="border-t border-primary-foreground/20 py-12">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold mb-4">Stay Updated</h3>
+                    <p class="text-primary-foreground/80 mb-6">
+                        Subscribe to our newsletter for the latest industry insights and opportunities.
+                    </p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email" required class="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300 whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-primary-foreground/20 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-primary-foreground/60 text-sm">
+                        © 2024 TalentPro. All rights reserved.
+                    </p>
+                    
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-primary-foreground/60 hover:text-accent transition-colors duration-300 text-sm">Privacy Policy</a>
+                        <a href="#" class="text-primary-foreground/60 hover:text-accent transition-colors duration-300 text-sm">Terms of Service</a>
+                        <div class="flex items-center space-x-4">
+                            <a href="#" aria-label="LinkedIn" class="text-primary-foreground/60 hover:text-accent transition-colors duration-300">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="text-primary-foreground/60 hover:text-accent transition-colors duration-300">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook" class="text-primary-foreground/60 hover:text-accent transition-colors duration-300">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

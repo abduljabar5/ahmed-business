@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - TalentPro</title>
+    <meta name="description" content="Learn about TalentPro's mission, values, and team">
+    
+    <!-- Tailwind CSS via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px'
+                    }
+                },
+                extend: {
+                    colors: {
+                        border: 'hsl(214, 32%, 91%)',
+                        input: 'hsl(214, 32%, 91%)',
+                        ring: 'hsl(210, 29%, 24%)',
+                        background: 'hsl(210, 17%, 98%)',
+                        foreground: 'hsl(210, 29%, 24%)',
+                        primary: {
+                            DEFAULT: 'hsl(210, 29%, 24%)',
+                            foreground: 'hsl(0, 0%, 100%)',
+                            hover: 'hsl(210, 29%, 20%)'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(210, 17%, 95%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(0, 84.2%, 60.2%)',
+                            foreground: 'hsl(0, 0%, 100%)'
+                        },
+                        success: {
+                            DEFAULT: 'hsl(142, 71%, 45%)',
+                            foreground: 'hsl(0, 0%, 100%)'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(210, 17%, 95%)',
+                            foreground: 'hsl(215, 14%, 34%)'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(45, 100%, 60%)',
+                            foreground: 'hsl(210, 29%, 24%)',
+                            hover: 'hsl(45, 100%, 55%)'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(0, 0%, 100%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(0, 0%, 100%)',
+                            foreground: 'hsl(210, 29%, 24%)'
+                        },
+                        slate: {
+                            DEFAULT: 'hsl(215, 25%, 27%)',
+                            light: 'hsl(215, 16%, 47%)',
+                            lighter: 'hsl(215, 20%, 65%)'
+                        },
+                        hero: {
+                            from: 'hsl(210, 29%, 24%)',
+                            to: 'hsl(195, 85%, 41%)',
+                            accent: 'hsl(45, 100%, 60%)'
+                        }
+                    },
+                    borderRadius: {
+                        lg: '0.75rem',
+                        md: 'calc(0.75rem - 2px)',
+                        sm: 'calc(0.75rem - 4px)'
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'fadeInUp': {
+                            from: { opacity: '0', transform: 'translateY(30px)' },
+                            to: { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/overrides.css">
+    
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-foreground font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                        <div class="w-6 h-6 bg-accent-foreground rounded-sm"></div>
+                    </div>
+                    <span class="text-xl font-bold text-foreground">TalentPro</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        Services
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="nav-link font-medium text-accent transition-all duration-300 relative group active">
+                        About
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-full"></span>
+                    </a>
+                    <a href="contact.html" class="nav-link font-medium text-foreground hover:text-accent transition-all duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-foreground">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 p-4 bg-background rounded-lg shadow-lg">
+                <a href="index.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">Home</a>
+                <a href="services.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">Services</a>
+                <a href="about.html" class="block py-3 px-4 rounded-lg font-medium text-accent bg-accent/10">About</a>
+                <a href="contact.html" class="block py-3 px-4 rounded-lg font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-all duration-300">Contact</a>
+                <div class="mt-4">
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300 w-full text-center block">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content with padding for fixed nav -->
+    <div class="pt-16">
+        
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 hero-gradient text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">About TalentPro</h1>
+                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mission Section -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Mission</h2>
+                        <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.
+                        </p>
+                        <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut 
+                            aliquip ex ea commodo consequat.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-accent flex-shrink-0"></i>
+                                <span class="text-foreground font-medium">Excellence in every placement</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-accent flex-shrink-0"></i>
+                                <span class="text-foreground font-medium">Long-term partnership approach</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-accent flex-shrink-0"></i>
+                                <span class="text-foreground font-medium">Industry-leading expertise</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-accent flex-shrink-0"></i>
+                                <span class="text-foreground font-medium">Commitment to diversity and inclusion</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-accent/20 to-accent/5 p-8 rounded-2xl">
+                            <div class="bg-card p-8 rounded-xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-card-foreground mb-4">Lorem Ipsum Vision</h3>
+                                <p class="text-muted-foreground leading-relaxed mb-6">
+                                    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                                    dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
+                                </p>
+                                <div class="flex items-center space-x-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="CEO" class="w-16 h-16 rounded-full object-cover">
+                                    <div>
+                                        <div class="font-semibold text-card-foreground">Lorem Ipsum</div>
+                                        <div class="text-muted-foreground text-sm">CEO & Founder</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="py-16 md:py-24 bg-muted/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Values</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card p-8 rounded-xl shadow-lg card-hover text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="award" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-4">Excellence</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-8 rounded-xl shadow-lg card-hover text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="users" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-4">Partnership</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-8 rounded-xl shadow-lg card-hover text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="trending-up" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-4">Innovation</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-8 rounded-xl shadow-lg card-hover text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="globe" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-4">Global Impact</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-16 md:py-24 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Journey</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative">
+                        <!-- Timeline Line -->
+                        <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-accent/30"></div>
+                        
+                        <!-- Timeline Items -->
+                        <div class="timeline-container space-y-12">
+                            <div class="relative flex items-center mb-12">
+                                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background z-10"></div>
+                                <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12">
+                                    <div class="bg-card p-6 rounded-xl shadow-lg">
+                                        <div class="text-2xl font-bold text-accent mb-2">2015</div>
+                                        <h3 class="text-xl font-bold text-card-foreground mb-3">Company Founded</h3>
+                                        <p class="text-muted-foreground leading-relaxed">
+                                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center mb-12 md:flex-row-reverse">
+                                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background z-10"></div>
+                                <div class="ml-16 md:ml-0 md:w-1/2 md:pl-12">
+                                    <div class="bg-card p-6 rounded-xl shadow-lg">
+                                        <div class="text-2xl font-bold text-accent mb-2">2017</div>
+                                        <h3 class="text-xl font-bold text-card-foreground mb-3">First Major Expansion</h3>
+                                        <p class="text-muted-foreground leading-relaxed">
+                                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center mb-12">
+                                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background z-10"></div>
+                                <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12">
+                                    <div class="bg-card p-6 rounded-xl shadow-lg">
+                                        <div class="text-2xl font-bold text-accent mb-2">2019</div>
+                                        <h3 class="text-xl font-bold text-card-foreground mb-3">Industry Recognition</h3>
+                                        <p class="text-muted-foreground leading-relaxed">
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center mb-12 md:flex-row-reverse">
+                                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background z-10"></div>
+                                <div class="ml-16 md:ml-0 md:w-1/2 md:pl-12">
+                                    <div class="bg-card p-6 rounded-xl shadow-lg">
+                                        <div class="text-2xl font-bold text-accent mb-2">2021</div>
+                                        <h3 class="text-xl font-bold text-card-foreground mb-3">Global Reach</h3>
+                                        <p class="text-muted-foreground leading-relaxed">
+                                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center mb-12">
+                                <div class="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background z-10"></div>
+                                <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12">
+                                    <div class="bg-card p-6 rounded-xl shadow-lg">
+                                        <div class="text-2xl font-bold text-accent mb-2">2024</div>
+                                        <h3 class="text-xl font-bold text-card-foreground mb-3">Innovation Leader</h3>
+                                        <p class="text-muted-foreground leading-relaxed">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section id="team" class="py-16 md:py-24 bg-muted/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Meet Our Team</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card p-6 rounded-xl shadow-lg card-hover text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Lorem Ipsum" class="w-24 h-24 rounded-full object-cover mx-auto mb-4">
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Lorem Ipsum</h3>
+                        <p class="text-accent font-medium mb-4">Chief Executive Officer</p>
+                        <p class="text-muted-foreground text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-6 rounded-xl shadow-lg card-hover text-center">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5c5?w=300&h=300&fit=crop&crop=face" alt="Dolor Consectetur" class="w-24 h-24 rounded-full object-cover mx-auto mb-4">
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Dolor Consectetur</h3>
+                        <p class="text-accent font-medium mb-4">Head of Executive Search</p>
+                        <p class="text-muted-foreground text-sm leading-relaxed">
+                            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-6 rounded-xl shadow-lg card-hover text-center">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Adipiscing Elite" class="w-24 h-24 rounded-full object-cover mx-auto mb-4">
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Adipiscing Elite</h3>
+                        <p class="text-accent font-medium mb-4">Director of Professional Services</p>
+                        <p class="text-muted-foreground text-sm leading-relaxed">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-card p-6 rounded-xl shadow-lg card-hover text-center">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Tempor Incididunt" class="w-24 h-24 rounded-full object-cover mx-auto mb-4">
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Tempor Incididunt</h3>
+                        <p class="text-accent font-medium mb-4">Senior Talent Advisor</p>
+                        <p class="text-muted-foreground text-sm leading-relaxed">
+                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Careers Section -->
+        <section id="careers" class="py-16 md:py-24 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Join Our Team</h2>
+                    <p class="text-xl text-muted-foreground mb-10 leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.
+                    </p>
+                    
+                    <div class="bg-card p-8 md:p-12 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-6">Current Opportunities</h3>
+                        
+                        <div class="space-y-6 text-left">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-muted/30 rounded-lg">
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Senior Talent Consultant</h4>
+                                    <p class="text-muted-foreground text-sm">Lorem City • Full-time</p>
+                                </div>
+                                <button class="mt-4 md:mt-0 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300">
+                                    Apply Now
+                                </button>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-muted/30 rounded-lg">
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Executive Search Associate</h4>
+                                    <p class="text-muted-foreground text-sm">Ipsum Town • Full-time</p>
+                                </div>
+                                <button class="mt-4 md:mt-0 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300">
+                                    Apply Now
+                                </button>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-muted/30 rounded-lg">
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Research Specialist</h4>
+                                    <p class="text-muted-foreground text-sm">Dolor Metro • Part-time</p>
+                                </div>
+                                <button class="mt-4 md:mt-0 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-300">
+                                    Apply Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center group">
+                            Contact Us About Careers
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-primary text-primary-foreground">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Partner With Us?</h2>
+                <p class="text-xl text-primary-foreground/80 mb-10 max-w-3xl mx-auto">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover inline-flex items-center justify-center">
+                        Get in Touch
+                    </a>
+                    <a href="services.html" class="bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-primary inline-flex items-center justify-center">
+                        View Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <!-- Footer (Same as other pages) -->
+    <footer class="bg-primary text-primary-foreground">
+        <!-- Footer content same as other pages -->
+    </footer>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

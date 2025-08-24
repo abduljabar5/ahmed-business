@@ -1,0 +1,363 @@
+/* TalentPro Custom CSS Overrides */
+/* Professional recruiting website design system - HSL colors only */
+
+/* Base styles and smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-display: swap;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+    background: linear-gradient(135deg, hsl(210, 29%, 24%) 0%, hsl(195, 85%, 41%) 100%);
+}
+
+/* Wave pattern overlay */
+.wave-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-hover hover:scale-105 hover:shadow-lg inline-flex items-center justify-center;
+}
+
+.btn-secondary {
+    @apply bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-primary inline-flex items-center justify-center;
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Container utilities */
+.container-custom {
+    @apply max-w-7xl mx-auto px-4;
+}
+
+@media (min-width: 640px) {
+    .container-custom {
+        @apply px-6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-custom {
+        @apply px-8;
+    }
+}
+
+/* Section padding utility */
+.section-padding {
+    @apply py-16;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        @apply py-24;
+    }
+}
+
+/* Text gradient utility */
+.text-gradient {
+    background: linear-gradient(135deg, hsl(210, 29%, 24%), hsl(195, 85%, 41%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dots background utility */
+.bg-dots {
+    background-image: radial-gradient(circle, hsl(215, 14%, 34%) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+}
+
+/* Focus styles for accessibility */
+.keyboard-navigation *:focus {
+    outline: 2px solid hsl(45, 100%, 60%);
+    outline-offset: 2px;
+}
+
+/* Form styles */
+input:focus,
+textarea:focus,
+select:focus {
+    box-shadow: 0 0 0 3px hsl(45, 100%, 60%, 0.1);
+}
+
+/* Loading spinner */
+.spinner {
+    border: 2px solid hsl(215, 14%, 34%, 0.3);
+    border-top: 2px solid hsl(45, 100%, 60%);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Smooth transitions for interactive elements */
+a, button, input, textarea, select {
+    transition: all 0.2s ease;
+}
+
+/* Hover effects for links and buttons */
+a:hover, button:hover {
+    transform: translateY(-1px);
+}
+
+/* Timeline specific styles */
+.timeline-container .relative:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .timeline-container .relative:nth-child(even) {
+        flex-direction: row;
+    }
+}
+
+/* Stats counter animation */
+.stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.stat-item.animate-fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .animate-float,
+    .animate-bounce,
+    .animate-pulse,
+    .animate-spin {
+        animation: none !important;
+    }
+    
+    .card-hover:hover {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hero-gradient {
+        background: hsl(210, 29%, 24%);
+    }
+    
+    .wave-pattern {
+        display: none;
+    }
+    
+    .bg-dots {
+        opacity: 0.3;
+    }
+}
+
+/* Dark mode support (if implemented) */
+.dark {
+    --background: hsl(210, 29%, 24%);
+    --foreground: hsl(210, 17%, 98%);
+    --card: hsl(215, 25%, 27%);
+    --card-foreground: hsl(210, 17%, 98%);
+    --popover: hsl(215, 25%, 27%);
+    --popover-foreground: hsl(210, 17%, 98%);
+    --primary: hsl(210, 17%, 98%);
+    --primary-foreground: hsl(210, 29%, 24%);
+    --secondary: hsl(215, 25%, 27%);
+    --secondary-foreground: hsl(210, 17%, 98%);
+    --muted: hsl(215, 25%, 27%);
+    --muted-foreground: hsl(215, 20%, 65%);
+    --accent: hsl(45, 100%, 60%);
+    --accent-foreground: hsl(210, 29%, 24%);
+    --destructive: hsl(0, 62.8%, 30.6%);
+    --destructive-foreground: hsl(210, 17%, 98%);
+    --border: hsl(215, 25%, 27%);
+    --input: hsl(215, 25%, 27%);
+    --ring: hsl(45, 100%, 60%);
+}
+
+/* Print styles */
+@media print {
+    .hero-gradient {
+        background: none !important;
+        color: black !important;
+    }
+    
+    .bg-primary {
+        background: none !important;
+        color: black !important;
+    }
+    
+    .text-white, .text-primary-foreground {
+        color: black !important;
+    }
+    
+    .wave-pattern, .bg-dots {
+        display: none !important;
+    }
+    
+    .card-hover {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+    
+    nav, .animate-float, .animate-bounce {
+        display: none !important;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .section-padding {
+        @apply py-12;
+    }
+    
+    .text-5xl, .text-6xl, .text-7xl {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .card-hover:hover {
+        transform: none;
+    }
+}
+
+/* Performance optimizations */
+.animate-float {
+    will-change: transform;
+}
+
+.card-hover {
+    will-change: transform, box-shadow;
+}
+
+/* Ensure proper font loading */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Custom scrollbar styles for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(210, 17%, 95%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(45, 100%, 60%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(45, 100%, 55%);
+}
+
+/* Firefox scrollbar styles */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(45, 100%, 60%) hsl(210, 17%, 95%);
+}
+
+/* Selection styles */
+::selection {
+    background-color: hsl(45, 100%, 60%, 0.3);
+    color: hsl(210, 29%, 24%);
+}
+
+::-moz-selection {
+    background-color: hsl(45, 100%, 60%, 0.3);
+    color: hsl(210, 29%, 24%);
+}
+
+/* Additional utility classes */
+.text-balance {
+    text-wrap: balance;
+}
+
+.min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* Loading states */
+.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading * {
+    cursor: wait !important;
+}
+
+/* Focus trap for modals */
+.modal-open {
+    overflow: hidden;
+}
+
+/* Success/error message animations */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-down {
+    animation: slideInDown 0.3s ease-out;
+}
+
+/* Professional spacing system */
+.space-y-section > * + * {
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .space-y-section > * + * {
+        margin-top: 6rem;
+    }
+}
+
+/* Ensure consistent line heights */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
+p, li {
+    line-height: 1.6;
+}
